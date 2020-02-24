@@ -5,7 +5,7 @@ import './item.scss'
 const Item =(props)=>{
 
     // console.log(props.items)
-    const {ProductName,price,id,quantity}=props.items;
+    const {ProductName,price,id,quantity,image}=props.items;
 
     return(   
     <div>
@@ -13,7 +13,7 @@ const Item =(props)=>{
 
             <div className="product">
             <div className="product-details">
-            <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg"/>
+            <img src={image}/>
             <span className="product-title">{ProductName}</span>
             
             </div>
@@ -23,10 +23,7 @@ const Item =(props)=>{
                     <div className="small-box">{quantity}
                      <span onClick={()=>props.increment(id)}>Update</span></div>
             </div>
-            <div className="product-removal">
-                <button className="remove-product" onClick={()=>props.remove(id)}>
-                Remove
-            </button>
+            <div className="product-removal"><i class="fa fa-close" onClick={()=>props.remove(id)}></i>
             </div>
            
             </div>
