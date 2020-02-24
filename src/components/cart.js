@@ -9,6 +9,7 @@ class Cart extends Component{
         subtotal:null,
         Tax:0,
         Total:null,
+        Additional_Comments:null,
         cartItems:[
 
             {
@@ -57,12 +58,21 @@ class Cart extends Component{
         copycartItem[id].quantity= currentItem + 1;
         this.setState({cartItems:[... copycartItem]})
     }
+    textareaHandler=(e)=>{
+        
+        let comments = e.target.value;
+        this.setState({Additional_Comments:comments})
+        console.log(this.state.Additional_Comments)
+    }
+    submit=()=>{
+        console.log(this.state);
+    }
     render(){
         return(
         <React.Fragment >
         <header className="App-header">
         <div>ORDERFORM</div>
-        <div style={{ "position":"relative","left":"83%"}}>Cart</div>
+        <div style={{ "position":"relative","left":"82%"}}>Cart</div>
         <div className="cart-box">{this.state.cartItems.length}</div>
         </header>    
 
@@ -106,7 +116,7 @@ class Cart extends Component{
             <label style={{"position":"relative","bottom":"32px"}}>Grand Total</label>
             <div className="totals-value" id="cart-total" style={{"position":"relative","bottom":"32px","color":"white"}}>{this.state.Total}</div>
         </div>
-        <button className="checkout">Checkout</button>
+        <button className="checkout" onClick={()=>this.submit()}>Checkout</button>
         </div>
             <div style={{ "position":"absolute","left":"500px","color":"white","text-align":"left","bottom":"10px"}}>
                 All orders should be sent by special delivery,which
@@ -118,7 +128,7 @@ class Cart extends Component{
         <div style={{"position":"relative","bottom":"60px","right":"492px"}}>
         
             
-            <textarea></textarea>
+            <textarea onChange={(e)=>this.textareaHandler(e)}></textarea>
         </div>
         </React.Fragment>
         )
