@@ -76,7 +76,7 @@ class Cart extends Component{
         <div className="cart-box">{this.state.cartItems.length}</div>
         </header>    
 
-        <div style={{ "position":"relative","right":"44%","padding":"42px","font-size":"25px","color":"white"}}>Your Cart</div>
+        <div style={{ "position":"relative","right":"44%","padding":"42px","fontSize":"25px","color":"white"}}>Your Cart</div>
         <button className="home-button">Home->Checkout</button>
         <div>
         <div className="column-labels">
@@ -85,7 +85,6 @@ class Cart extends Component{
                 <label className="product-price">Price</label>
                 <label className="product-quantity">Quantity</label>
                 <label className="product-removal">Remove</label>
-                {/* <label className="product-line-price">Total</label> */}
         </div>
             <ul>
                 {
@@ -118,7 +117,7 @@ class Cart extends Component{
         </div>
         <button className="checkout" onClick={()=>this.submit()}>Checkout</button>
         </div>
-            <div style={{ "position":"absolute","left":"500px","color":"white","text-align":"left","bottom":"10px"}}>
+            <div style={{ "position":"absolute","left":"500px","color":"white","textAlign":"left","bottom":"10px"}}>
                 All orders should be sent by special delivery,which
                 <br/>
                 will be insured and will need to be signed for
@@ -128,7 +127,7 @@ class Cart extends Component{
         <div style={{"position":"relative","bottom":"60px","right":"492px"}}>
         
             
-            <textarea onChange={(e)=>this.textareaHandler(e)}></textarea>
+            <textarea onChange={(e)=>this.textareaHandler(e)} style={{"backgroundColor":"black","color":"white"}}></textarea>
         </div>
         </React.Fragment>
         )

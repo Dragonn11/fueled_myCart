@@ -1,17 +1,23 @@
 import React from 'react';
 import './item.scss'
-
+var classNames = require('classnames');
 
 const Item =(props)=>{
 
     // console.log(props.items)
     const {ProductName,price,id,quantity,image}=props.items;
 
+    var liClasses = classNames({
+        'product': true,
+        'product-black': id%2!==0
+      });
+  
+
     return(   
     <div>
         <div className="shopping-cart">
 
-            <div className="product">
+            <div className={liClasses}>
             <div className="product-details">
             <img src={image}/>
             <span className="product-title">{ProductName}</span>
@@ -19,11 +25,10 @@ const Item =(props)=>{
             </div>
             <div className="product-price">{price}</div>
                 <div className="product-quantity">
-                {/* <input type="number" value="2" min="1"/> */}
                     <div className="small-box">{quantity}
                      <span onClick={()=>props.increment(id)}>Update</span></div>
             </div>
-            <div className="product-removal"><i class="fa fa-close" onClick={()=>props.remove(id)}></i>
+            <div className="product-removal"><i className="fa fa-close" style={{"position":"relative","top":"10px"}} onClick={()=>props.remove(id)}></i>
             </div>
            
             </div>
