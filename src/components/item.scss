@@ -1,0 +1,341 @@
+$color-border: #eee;
+$color-label: #aaa;
+$font-default: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
+
+
+/* Global "table" column settings */
+// .product-image { float: left; width: 20%; }
+.product-details { float: left; width: 37%; }
+.product-price { float: left; width: 28%; }
+.product-quantity { float: left; width: 22%; }
+.product-removal { float: left; width: 9%; }
+// .product-line-price { float: left; width: 12%; text-align: right; }
+
+body{
+  background-color:#272824;
+}
+
+.App {
+  text-align: center;
+}
+.App-header {
+  background-color:rgb(148, 12, 7);
+  
+  display: flex;
+  color: white;
+  width: 150%;
+  right: 21px;
+  position: relative;
+  padding:11px;
+}
+
+.cart-box{
+    width: 20px;
+    padding: 1px;
+    border: 1px solid auto;
+    margin: 0;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    left: 1290px;
+    color:black
+}
+img{
+  width: 17%;
+  left: -87px;
+  position: relative;
+  border-radius: 12px;
+  padding: 5px;
+
+}
+
+  span.product-title {
+    width: 20%;
+    left: -72px;
+    position: relative;
+    bottom: 29px;
+}
+span{
+  position:relative;
+  left: 25px;
+}
+.small-box{
+  width: 20px;
+    padding: 1px;
+    border: 1px solid auto;
+    margin: 0;
+    border-radius: 5px;
+    background-color: black;
+    position: relative;
+    left: 130px;
+}
+.home-button{
+  position: relative;
+  bottom: 66px;
+  left: 43%;
+  background-color: black;
+  color: white;
+  border: 0px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before,
+.group:after {
+    content: '';
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1;
+}
+
+
+/* Apply clearfix in a few places */
+.shopping-cart, .column-labels, .product, .totals-item {
+  @extend .group;
+}
+
+
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
+}
+
+
+/* Body/Header stuff */
+body {
+  padding: 0px 30px 30px 20px;
+  font-family: $font-default;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+label {
+  color: $color-label;
+}
+
+.shopping-cart {
+  margin-top: -45px;
+}
+
+
+/* Column headers */
+.column-labels {
+  label {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    // border-bottom: 3px solid $color-border;
+    position: relative;
+    left:24px;
+    background-color: black;
+    border-radius: 2.5px;
+  }
+  
+  // .product-image, .product-details, .product-removal {
+  //   text-indent: -9999px;
+  // }
+}
+.delivery-info {
+  width: auto;
+  position: relative;
+  right: 40%;
+  top: 19px;
+}
+.additional{
+  position: relative;
+  right: 63%;
+ 
+}
+
+/* Product entries */
+.product {
+  margin-bottom: 35px;
+  padding-bottom: 10px;
+  border-bottom: 0px solid $color-border;
+  color: white;
+  
+  .product-image {
+    text-align: center;
+    img {
+      width: 100px;
+    }
+  }
+  textarea{
+    position: relative;
+    left:15px;
+    width: 166px;
+    height: 74px;
+  }
+  
+  .product-details {
+    .product-title {
+      // margin-right: 600px;
+      font-family: $font-bold;
+    }
+    .product-description {
+      margin: 5px 20px 5px 0;
+      line-height: 1.4em;
+    }
+  }
+  
+  .product-quantity {
+    input {
+      width: 40px;
+      
+    }
+  }
+  
+  .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 3px;
+    position: relative;
+    left: 25px;
+  }
+  
+  .remove-product:hover {
+    background-color: #a44;
+  }
+}
+
+
+/* Totals section */
+.totals {
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+    
+    label {
+      float: left;
+      clear: both;
+      width: 79%;
+      text-align: right;
+    }
+    
+    .totals-value {
+      float: right;
+      width: 21%;
+      text-align: right;
+    }
+  }
+  
+  .totals-item-total {
+    font-family: $font-bold;
+  }
+}
+
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  
+  .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid $color-border;
+  }
+  
+  .column-labels {
+    display: none;
+  }
+  
+  .product-image {
+    float: right;
+    width: auto;
+    img {
+      margin: 0 0 10px 10px;
+    }
+  }
+  
+  .product-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  
+  .product-price {
+    clear: both;
+    width: 70px;
+  }
+  
+  .product-quantity {
+    width: 100px;
+    input {
+      margin-left: 20px;
+    }
+  }
+  
+  .product-quantity:before {
+    content: 'x';
+  }
+  
+  .product-removal {
+    width: auto;
+  }
+  
+  .product-line-price {
+    float: right;
+    width: 70px;
+  }
+  
+}
+
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+  
+  .product-removal {
+    float: right;
+  }
+  
+  .product-line-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+  
+  .product .product-line-price:before {
+    content: 'Item Total: $';
+  }
+  
+  .totals {
+    .totals-item {
+      label {
+        width: 60%;
+      }
+      
+      .totals-value {
+        width: 40%;
+      }
+    }
+  }
+}
